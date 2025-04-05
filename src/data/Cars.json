@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "BMW X1",
+    "choice_percentage": 45,
+    "image_url": "src/assets/bmwx1.png",
+    "reposts": 2037,
+    "rental_price_per_hour": 100
+  },
+  {
+    "id": 2,
+    "name": "LAMBORGHINI URUS",
+    "choice_percentage": 20,
+    "image_url": "src/assets/lamborghini_urus.png",
+    "reposts": 5983,
+    "rental_price_per_hour": 500
+  },
+  {
+    "id": 3,
+    "name": "VOLVO XC90",
+    "choice_percentage": 10,
+    "image_url": "src/assets/volvo_xc90.png",
+    "reposts": 3071,
+    "rental_price_per_hour": 120
+  },
+  {
+    "id": 4,
+    "name": "JEEP RUBICON",
+    "choice_percentage": 8,
+    "image_url": "src/assets/jeep_rubicon.png",
+    "reposts": 1942,
+    "rental_price_per_hour": 150
+  },
+  {
+    "id": 5,
+    "name": "ГЕЛИК",
+    "choice_percentage": 12,
+    "image_url": "src/assets/mercedes_benz.png",
+    "reposts": 4178,
+    "rental_price_per_hour": 350
+  },
+  {
+    "id": 6,
+    "name": "PORSCHE 911",
+    "choice_percentage": 5,
+    "image_url": "src/assets/porshe911.png",
+    "reposts": 2803,
+    "rental_price_per_hour": 450
+  }
+]

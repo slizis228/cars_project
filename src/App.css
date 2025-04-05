@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    /* Убираем фиксированную высоту */
+    margin: 0;  /* Убираем отступы между слайдами */
+    padding: 0;  /* Убираем отступы внутри слайда */
+}
