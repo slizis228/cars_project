@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Nav from './components/Nav'
 import Home from './pages/Home'
-import Cars from './pages/Cars'
+import CarsPage from './pages/CarsPage'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -14,7 +14,7 @@ function App() {
           <Nav/>     
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/cars" element={<Cars/>}/>
+            <Route path="/cars" element={<CarsPage/>}/>
           </Routes>
         </BrowserRouter>
 

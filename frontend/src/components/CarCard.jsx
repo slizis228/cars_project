@@ -1,6 +1,10 @@
 import React from 'react'
+import { RiLoopLeftLine } from "react-icons/ri";
+import { SlLoop } from "react-icons/sl";
+import { RiSettings2Line } from "react-icons/ri";
+import { IoFlashOutline } from "react-icons/io5";
 
-const CarCard = (id,name,choice_percentage,image_url,reposts,rental_price_per_hour) => {
+const CarCard = ({id,name,choice_percentage,image_url,reposts,rental_price_per_hour}) => {
   return (
     <div key={id} className=" ">
         {/* car card */}
