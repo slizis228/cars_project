@@ -1,11 +1,10 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile, Form
-
+import crud 
 from fastapi.middleware.cors import CORSMiddleware
+from models import Car
+
 
 app = FastAPI()
-
-
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,24 +14,44 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# @app.get('/')
-# def get_default():
-#     return {"test": "Hello World"}
+@app.get('/')
+def get_default():
+    return {"test": "Hello World"}
 
-# @app.get("/cars")
-
-
-
-# @app.get("/cars/{name}")
+@app.get("/cars")
+def get_all_cars():
+    return crud.get_all_cars()
 
 
-# @app.post("/cars")
+
+@app.get("/cars/{name}")
+def get_car_by_name(name: str):
+    return crud.get_car_by_name(name)
 
 
-# @app.put("/cars/{id}")
+
+@app.post("/cars")
+def create_car(car:Car):
+    if not crud.create_car(car):
+        raise HTTPException(status_code=400, detail="Error while creating a car ")
+    return {"messsage": "car created successfully"}
 
 
-# @app.delete("/cars/{id}")
+
+@app.put("/cars/{id}")
+def update_car(car_id:int, car:Car):
+    if not crud.update_car(car_id,car):
+        raise HTTPException(status_code=400, detail="Error while updating a car ")
+    return{"message": "updating car successfully"}
+        
+
+@app.delete("/cars/{id}")
+def delete_car(car_id: int):
+    if not crud.delete_car(car_id):
+        raise HTTPException(status_code=400, detail="Error while deleting a car ")
+    return{"message":"deleting car successfully"}
+        
+    
 
 
 
