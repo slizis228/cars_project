@@ -26,7 +26,7 @@ const Cars = () => {
         <div className=' w-[95%] mx-auto grid grid-cols-3 space-y-6'>
             
             {/* car card */}
-            {cars.map((car) => (
+            {cars.slice(0,6).map((car) => (
                 <div key={car.id} className=" ">
                     {/* car card */}
                     <div className="flex flex-col space-y-2  w-[418px] h-[248px] p-4 items-center rounded-xl shadow-2xl">
