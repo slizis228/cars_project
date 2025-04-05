@@ -1,18 +1,32 @@
 import React from 'react'
+import { useState,useEffect } from 'react';
 import { RiLoopLeftLine } from "react-icons/ri";
 import { SlLoop } from "react-icons/sl";
 import { RiSettings2Line } from "react-icons/ri";
 import { IoFlashOutline } from "react-icons/io5";
-import carsData from '../data/Cars.json'
+import axios from 'axios';
+
 
 const Cars = () => {
+    const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    // Запрос к серверу для получения машин
+    axios.get('http://localhost:8000/cars')  // Замените URL на свой сервер
+      .then(response => {
+        setCars(response.data);  // Ответ содержит массив машин
+      })
+      .catch(error => {
+        console.error("Error fetching cars data:", error);
+      });
+  }, []);
   return (
     <>
         {/* div with cars cards */}
         <div className=' w-[95%] mx-auto grid grid-cols-3 space-y-6'>
             
             {/* car card */}
-            {carsData.map((car) => (
+            {cars.map((car) => (
                 <div key={car.id} className=" ">
                     {/* car card */}
                     <div className="flex flex-col space-y-2  w-[418px] h-[248px] p-4 items-center rounded-xl shadow-2xl">
