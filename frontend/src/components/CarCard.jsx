@@ -3,10 +3,16 @@ import { RiLoopLeftLine } from "react-icons/ri";
 import { SlLoop } from "react-icons/sl";
 import { RiSettings2Line } from "react-icons/ri";
 import { IoFlashOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const CarCard = ({id,name,choice_percentage,image_url,reposts,rental_price_per_hour}) => {
+    
+    const navigate = useNavigate();
+    const handleClick = (name) => {
+        navigate(`/cars/${name}`);
+    };
   return (
-    <div key={id} className=" ">
+    <div key={id} className=" cursor-pointer " onClick={() => handleClick(name)}>
         {/* car card */}
         <div className="flex flex-col space-y-2  w-[418px] h-[248px] p-4 items-center rounded-xl shadow-2xl">
         <div className="flex flex-row items-center space-x-2">

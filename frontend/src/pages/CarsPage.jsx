@@ -7,10 +7,10 @@ const CarsPage = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-      // Запрос к серверу для получения машин
-      axios.get('http://localhost:8000/cars')  // Замените URL на свой сервер
+      
+      axios.get('http://localhost:8000/cars')  
         .then(response => {
-          setCars(response.data);  // Ответ содержит массив машин
+          setCars(response.data);  
         })
         .catch(error => {
           console.error("Error fetching cars data:", error);
@@ -20,7 +20,7 @@ const CarsPage = () => {
     return (
     <>
         {/* div with cars cards */}
-        <div className=' w-[95%] h-screen  mx-auto grid grid-cols-3 space-y-7 ml-20 overflow-scroll'>
+        <div className=' w-[95%] h-screen  mx-auto grid grid-cols-3 space-y-7 pt-4 ml-20 overflow-scroll'>
             
             {/* car card */}
             {cars.map((car) => (

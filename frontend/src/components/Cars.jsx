@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useNavigate } from 'react';
 import CarCard from './CarCard';
 
 import axios from 'axios';
@@ -7,18 +7,22 @@ import axios from 'axios';
 
 
 const Cars = ({limit = 6}) => {
-  const [cars, setCars] = useState([]);
+    const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    // Запрос к серверу для получения машин
-    axios.get('http://localhost:8000/cars')  // Замените URL на свой сервер
+    
+    axios.get('http://localhost:8000/cars')  
       .then(response => {
-        setCars(response.data);  // Ответ содержит массив машин
+        setCars(response.data);  
       })
       .catch(error => {
         console.error("Error fetching cars data:", error);
       });
   }, []);
+
+
+
+
   return (
     <>
         {/* div with cars cards */}
