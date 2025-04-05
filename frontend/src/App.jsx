@@ -10,7 +10,6 @@ function App() {
       <div className='flex flex-row justify-between'>
         <Nav/>     
         <Home/>
-        <h1>Hello world</h1>
       </div>
     </>
 
